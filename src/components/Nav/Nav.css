@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.link {
+  flex-grow: 1;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-left: 1px solid #eee;
+
+  &:first-child {
+    border-left: 0px;
+  }
+}
