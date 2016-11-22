@@ -12,8 +12,7 @@ module.exports = (config) => {
     // TODO - docs seem to have the app here too, but why?
     // list of files / patterns to load in the browser
     files: [
-      './test/index.js',
-      './test/**/*.spec.*'
+      './test/**/*.karma.*'
     ],
 
     exclude: [],

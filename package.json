@@ -10,7 +10,7 @@
     "dev-server": "webpack-dev-server --config ./webpack/dev.config.js",
     "lint": "eslint ./src/**/*.js*",
     "build": "webpack --config ./webpack/prod.config.js",
-    "test": "TODO - test using jasmine directly",
+    "test": "tape -r './test/register.js' './test/**/*.tape.*' | tap-spec",
     "gulp-build": "gulp build",
     "gulp-watch": "gulp",
     "gulp-dev": "concurrently \"npm run server\" \"npm run gulp-watch\"",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-rewire": "^1.0.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.18.0",
     "babel-plugin-transform-es2015-spread": "^6.8.0",
@@ -37,6 +38,7 @@
     "dotenv": "^2.0.0",
     "enzyme": "^2.6.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "jsdom": "^9.8.3",
     "karma-browserify": "^5.1.0",
     "koa": "^1.2.4",
     "koa-route": "^2.4.2",
@@ -59,6 +61,8 @@
     "react-test-renderer": "^15.4.0",
     "redux": "^3.6.0",
     "redux-form": "^6.2.0",
+    "rewire": "^2.5.2",
+    "tape": "^4.6.3",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^1.16.2"
   },
