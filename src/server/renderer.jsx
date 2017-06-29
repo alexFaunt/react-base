@@ -42,6 +42,8 @@ export default function* () { // eslint-disable-line require-yield
   // get the result
   const { redirect, missed } = context.getResult()
 
+  console.log(context)
+
   // the result will tell you if it redirected, if so, we ignore
   // the markup and send a proper redirect.
   if (redirect) {

@@ -3,9 +3,7 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const postcss = require('./postcss.config.js')
-
-const extractCSS = new ExtractTextPlugin({ filename: '[name].css', allChunks: true })
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   plugins: [
@@ -24,8 +22,9 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: extractCSS.extract({
-          loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
+        loader: ExtractTextPlugin.extract({
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader',
+          options: { minimize: true }
         })
       }
     ]

@@ -10,11 +10,10 @@
     "dev-server": "webpack-dev-server --config ./webpack/dev.config.js",
     "lint": "eslint ./src/**/*.js*",
     "build": "webpack --config ./webpack/prod.config.js",
-    "test": "tape -r './test/register.js' './test/**/*.tape.*' | tap-spec",
-    "gulp-build": "gulp build",
-    "gulp-watch": "gulp",
-    "gulp-dev": "concurrently \"npm run server\" \"npm run gulp-watch\"",
-    "gulp-test": "gulp test"
+    "test": "tape -r './test/register.js' './test/**/*.*' | tap-spec",
+
+    "prepush": "npm run test",
+    "precommit": "npm run lint"
   },
   "author": "",
   "license": "ISC",
@@ -69,6 +68,7 @@
   "devDependencies": {
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.7",
+    "babel-plugin-istanbul": "^3.0.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "css-loader": "^0.25.0",
@@ -86,6 +86,7 @@
     "karma": "^1.3.0",
     "karma-browserify": "^5.1.0",
     "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
     "karma-mocha": "^1.3.0",
     "karma-requirejs": "^1.1.0",
